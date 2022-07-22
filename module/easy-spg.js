@@ -1,6 +1,6 @@
 class Runder {
     pages = {}
-
+    TEMPLATE_ALL_HTML = ``; 
     /*
         this settings we recommend you to set are true 
         to have ablity to see Error and catch it
@@ -50,7 +50,7 @@ class Runder {
         // HundlerURL function
         this.hundleURL((url) => {
             this.isPageThere(url, (err , pageHtml) => {
-                rootEle.innerHTML = pageHtml();
+                rootEle.innerHTML = `${this.TEMPLATE_ALL_HTML ? this.TEMPLATE_ALL_HTML : ''} ${pageHtml()}`;
             })           
         })
        
@@ -80,21 +80,18 @@ class Runder {
         */
         
         window.addEventListener("hashchange", () => {
-           
+
             const path = location.hash.replace('#' , "")
             /*
                 we storing last navigation 
                 because when user do refresh to the page
                 hash will be undefined 
             */
-            
-            
             localStorage.setItem('page', path)
             
             callBack(path)
           
         })
-
 
         window.onload = () => {
             // here we are saving url path
@@ -110,14 +107,8 @@ class Runder {
                         callBack(keys[g])
                     }
                 }
-                
             }
-            
         }
-
-       
-
-      
     }
 
     hundleError(err, msg) {
@@ -126,8 +117,37 @@ class Runder {
             this funtion it hundle any kinde 
             of Error you need just add 
         */
-        
+        const style = `
+            /* Error Hundle style  */
+            .root {
+                width: 100%
+            }
+            .error {
+                height: calc(100vh - 160px);
+                width: calc(100% - 160px);
+                margin: 0;
+                padding: 80px;
+                background-color: #000000de;
+                font-family: sans-serif;
+            }
+
+            .error h1 {
+                margin: 0;
+                padding: 0;
+                color: white;
+            }
+
+            .error p {
+                font-size: 20px;
+                color: red;
+            }
+
+            .error strong {
+                color: #59b2f7;
+            }
+        ` 
         let ErrorPage = `
+            <style>${style}</style>
             <div class="error">
                 <h1>Error : ${err}</h1>
                 <p>
@@ -136,12 +156,18 @@ class Runder {
             </div>
         `
         const rootEle = document.getElementsByClassName(this.root)[0];
+    
+        
         rootEle.innerHTML = ErrorPage;
         return
 
 
     }
 
+    templateForAllPages(code) {
+       
+        this.TEMPLATE_ALL_HTML = code
+    }
 }
 
 export default Runder

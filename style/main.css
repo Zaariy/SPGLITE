@@ -41,28 +41,3 @@ a {
 .init-page p {
     color: #99AEBB;
 }
-
-/* Error Hundle style  */
-.error {
-    height: calc(100vh - 160px);
-    width: calc(100% - 160px);
-    margin: 0;
-    padding: 80px;
-    background-color: #000000de;
-    font-family: sans-serif;
-}
-
-.error h1 {
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-
-.error p {
-    font-size: 20px;
-    color: red;
-}
-
-.error strong {
-    color: #59b2f7;
-}
