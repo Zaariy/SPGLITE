@@ -47,7 +47,7 @@ Now if you want to create another page do the same steps we did before, let's cr
 <span style="color : green ; font-weight: bold ; font-size : 20px">Results :</span>
 
 
-![a](https://github.com/Zaariy/SPGLITE/blob/main/images/2022-07-22_1658501229817.mp4)
+![vedio](https://user-images.githubusercontent.com/82719618/180468331-e9dcba3b-8229-4566-a862-634dca6aba88.mp4)
 
 
 ## What about debugging our code :
