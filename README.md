@@ -47,7 +47,7 @@ Now if you want to create another page do the same steps we did before, let's cr
 <span style="color : green ; font-weight: bold ; font-size : 20px">Results :</span>
 
 
-![a]('/images/2022-07-22_1658501229817.mp4')
+![a](https://github.com/Zaariy/SPGLITE/blob/main/images/2022-07-22_1658501229817.mp4)
 
 
 ## What about debugging our code :
